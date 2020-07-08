@@ -26,8 +26,15 @@ namespace Day3Assign.Controllers
         [HttpPost]
         public IActionResult Create(Product p)
         {
-            list.Add(p);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                list.Add(p);
+                return RedirectToAction("Index");
+            } else
+            {
+                return View();
+            }
+            
         }
 
     }
