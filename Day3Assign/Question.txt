@@ -1,0 +1,8 @@
+Create Model(Product)(Pid,Pname,Price,Stock)
+Create Product Controller
+Index() //display all the product in table format
+Create() //get action
+Create(Product p) //post action
+//add product details to list
+//display the new product details in table
+//Validate Product Model(all values are required)
