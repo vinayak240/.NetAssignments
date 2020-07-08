@@ -1,0 +1,53 @@
+﻿@model List<Day3Assign.Models.Product>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+	<div class="container">
+		<h3>
+			Products
+			<a href="Product/Create" class="btn btn-dark float-right">
+				Add
+			</a>
+		</h3>
+		<hr />
+		<table class="table table-bordered table-hover">
+			<thead class="thead-dark">
+				<tr>
+					<th class="font-weight-bolder">
+						Product Name
+					</th>
+					<th class="font-weight-bold p-1">
+						Product ID
+					</th>
+					<th class="font-weight-bold">
+						Product Price
+					</th>
+					<th class="font-weight-bold">
+						Stock
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td >
+							@item.pname
+						</td>
+						<td>
+							@item.pid
+						</td>
+						<td>
+							@item.price
+						</td>
+						<td>
+							@item.stock
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+		
+
+	</div>

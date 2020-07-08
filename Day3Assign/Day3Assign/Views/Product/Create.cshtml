@@ -1,0 +1,33 @@
+﻿@model Day3Assign.Models.Product;
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+	<form action="Create" method="post" class="card p-4 pt-3 w-60 m-auto shadow-sm">
+		<h4 class="font-weight-bolder mb-3">
+			Create New Product
+		</h4>
+		<div class="form-group">
+			<label for="name">Product Name</label>
+			<input type="text" class="form-control font-weight-bold" id="name" name="pname">
+		</div>
+		<div class="form-group">
+			<label for="pid1">Product ID</label>
+			<input type="text" class="form-control font-weight-bold" id="pid1" name="pid">
+		</div>
+
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="price1">Price</label>
+				<input type="number" class="form-control font-weight-bold" id="price1" name="price">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="stock1">Stock</label>
+				<input type="number" class="form-control font-weight-bold" id="stock1" name="stock">
+			</div>
+		</div>
+
+		<button type="submit" class="btn btn-primary">Create</button>
+	</form>
+
+
