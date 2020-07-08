@@ -5,4 +5,4 @@ Create() //get action
 Create(Product p) //post action
 //add product details to list
 //display the new product details in table
-//Validate Product Model(all values are required)
+//Validate Product Model(all values are required).
