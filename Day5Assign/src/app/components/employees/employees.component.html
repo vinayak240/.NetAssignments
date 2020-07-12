@@ -1,0 +1,99 @@
+<div class="container">
+  <h2>
+    Employees
+    <button (click)="showForm = !showForm" class="btn btn-sm btn-dark">
+      Add Employee
+    </button>
+  </h2>
+  <form
+    #empForm="ngForm"
+    (ngSubmit)="onSubmit(empForm)"
+    *ngIf="showForm"
+    class="card p-3 m-3"
+  >
+    <div class="form-group">
+      <label>Eid</label>
+      <input
+        type="text"
+        class="form-control"
+        name="eid"
+        [(ngModel)]="emp.eid"
+        [ngClass]="{ 'is-invalid': inEid.errors?.required && inEid.touched }"
+        #inEid="ngModel"
+        required
+      />
+      <div class="invalid-feedback">
+        **Required
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Employee name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="ename"
+        [(ngModel)]="emp.ename"
+        [ngClass]="{
+          'is-invalid': inEname.errors?.required && inEname.touched
+        }"
+        #inEname="ngModel"
+        required
+      />
+      <div class="invalid-feedback">
+        **Required
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Salary</label>
+      <input
+        type="text"
+        class="form-control"
+        name="salary"
+        [(ngModel)]="emp.salary"
+        [ngClass]="{
+          'is-invalid': inSalary.errors?.required && inSalary.touched
+        }"
+        #inSalary="ngModel"
+        required
+      />
+      <div class="invalid-feedback">
+        **Required
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Designation</label>
+      <input
+        type="text"
+        class="form-control"
+        name="desig"
+        [(ngModel)]="emp.desig"
+        [ngClass]="{
+          'is-invalid': inDesig.errors?.required && inDesig.touched
+        }"
+        #inDesig="ngModel"
+        required
+      />
+      <div class="invalid-feedback">
+        **Required
+      </div>
+    </div>
+    <button [disabled]="!empForm.form.valid" class="btn btn-success btn-block">
+      Submit
+    </button>
+  </form>
+  <ul>
+    <li *ngFor="let obj of employees" class="card p-2 mb-2">
+      <h4 class="p-2">
+        <span class="bg-success text-light p-1 border-rounded mr-2">
+          #{{ obj.eid }}
+        </span>
+        {{ obj.ename }}
+      </h4>
+      <ul class="list-group card-body">
+        <li class="list-group-item">Salary : {{ obj.salary }}</li>
+        <li class="list-group-item">Designation : {{ obj.desig }}</li>
+        <li class="list-group-item">Joined : {{ obj.joindate | date }}</li>
+      </ul>
+    </li>
+  </ul>
+</div>
